@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=800, height=600, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>TowerDefens</title>
+</head>
+<body>
+    </div>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <small id="game-over">Game Over</small>
+    <small id="start">Los geht´s mit Leertaste!</small>
+    <small id="pause">Spiel ist pausiert, mit Leertaste gehts direkt weiter!</small>
+    <main>
+        <button id="new-wave" class="anzeige" onclick="new_wave()">Wave</button>
+        <p class="anzeige" id="stones">Steine: <p id="stone">150</p></p>
+        <p class="anzeige" id="live">Leben: <p id="life">1</p></p>
+        <p class="anzeige" id="wave">Wave: <p id="wave-number">1</p></p>
+        <p class="anzeige" id="el">Gegner-level: <p id="enemy-level">1</p></p>
+    </main>
+    <div id="set">
+        <div id="tower_0">    <div class="closebtn" onclick="document.getElementById(`tower_${lastTowerIndex}`).style.display = 'none';">&times;</div>
+            <button class="anzeige" onclick="upgrade('tower', 1)"><p id="tower_1_0">Schaden erhöhen <p id="tower_a_0">100</p></p></button><br>
+            <button class="anzeige" onclick="upgrade('tower', 2)"><p id="tower_2_0">Feuerrate erhöhen <p id="tower_b_0">100</p></button><br>
+            <button class="anzeige" onclick="upgrade('tower', 3)"><p id="tower_3_0">Reichweite erhöhen <p id="tower_c_0">80</p></button><br>
+        </div>
+    </div>
+    <div id="tuerme" class="container top">
+        <div class="row">
+            <div class="col-1">Abwehrtürme setzen <div id="right" onclick="container()">&times;</div></div>
+        </div>
+        <div class="row">
+            <div class="col-8"><button class="anzeige" onclick="tower('goldmine')">Goldgrube - <p id="">500 <br> Coming Soon!</p></button></div>
+            <div class="col-8"><button class="anzeige" onclick="tower('nuke')">Raketenwerfer - <p id="">400</p></button></div>
+            <div class="col-8"><button class="anzeige" onclick="tower('decoy')">Köderer - <p id="">250 <br> Coming Soon!</p></button></div>
+            <div class="col-8"><button class="anzeige" onclick="tower('radar')">Radar - <p id="">250 <br> Coming Soon!</p></button></div>
+            <div class="col-8"><button class="anzeige" onclick="tower('mine')">Minenturm - <p id="">250 <br> Coming Soon!</p></button></div>
+            <div class="col-8"><button class="anzeige" onclick="tower('support')">Stützturm - <p id="">325 <br> Coming Soon!</p></button></div>
+            <div class="col-8"><button class="anzeige" onclick="tower('sentry')">Wachturm - <p id="">300 <br> Coming Soon!</p></button></div>
+            <div class="col-8"><button class="anzeige" onclick="tower('tower')">Neuer Turm - <p id="p_t">150</p></button></div>
+        </div>
+        <div class="row">
+            <div class="col-8"><button class="anzeige" onclick="tower('toxic')">Giftturm - <p id="">275 <br> Coming Soon!</p></button></div>
+            <div class="col-8"><button class="anzeige" onclick="tower('electric')">Blitzgenerator - <p id="">325 <br> Coming Soon!</p></button></div>
+            <div class="col-8"><button class="anzeige" onclick="tower('laser')">Laser - <p id="">350 <br> Coming Soon!</p></button></div>
+            <div class="col-8"><button class="anzeige" onclick="tower('acid')">Säure-Werfer - <p id="">275 <br> Coming Soon!</p></button></div>
+            <div class="col-8"><button class="anzeige" onclick="tower('heal')">Heal-Tower - <p id="">300 <br> Coming Soon!</p></button></div>
+            <div class="col-8"><button class="anzeige" onclick="tower('freeze')">Eisfeuerer - <p id="eb">300 <br> Coming Soon!</p></button></div>
+            <div class="col-8"><button class="anzeige" onclick="tower('sniper')">Scharfschütze - <p id="as">250</p></button></div>
+            <div class="col-8"><button class="anzeige" onclick="tower('bomber')">Bombenwerfer - <p id="bw">250</p></button></div>
+        </div>
+    </div>
+    <div id="b" onclick="document.getElementById('tuerme').style.visibility = 'visible';">Abwehrturm setzen</div>
+    <div id="closebtn">&times;</div>
+    <script src="wave.js" defer></script>
+    <script src="main.js" defer></script>
+    <script src="upgrade.js" defer></script>
+    <script src="onclick.js" defer></script>
+</body>
+</html>
